@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import UserContext from './UserContext'
 
 const StateContext = (props) => {
-    const details=JSON.parse(localStorage.getItem("auth"))
+    const details=JSON.parse(localStorage.getItem("auth"));
     
     const [userData,setUserData]=useState({
         user:details? details.user:null,
