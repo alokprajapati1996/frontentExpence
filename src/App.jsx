@@ -5,7 +5,6 @@ import Home from './pages/Home'
 import Signup from './pages/Signup'
 import Login from './pages/Login'
 import UserContext from './context/UserContext'
-import ForgetPassword from './pages/ForgetPassword'
 import ForgetAccount from './pages/forgetAccount'
 
 const App = () => {
@@ -23,7 +22,7 @@ const App = () => {
       <Route path='/sign-up' element={<Signup/>}/> 
       <Route path='/login' element={<Login/>}/> 
       <Route path='/forgetpass' element={<ForgetAccount/>}/>
-      <Route path="/forgotPassword" element={<ForgetPassword/>}/>
+      {/* <Route path="/forgotPassword" element={<ForgetPassword/>}/> */}
 
     </Routes>
    </BrowserRouter>
