@@ -1,8 +1,10 @@
 import axios from 'axios'
 import React, { useRef } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-
+import url from '../url'
 const Signup = () => {
+  console.log(url)
+ 
     let nameRef = useRef()
     let emailRef = useRef()
     let passwordRef = useRef()
@@ -22,7 +24,7 @@ const Signup = () => {
       console.log(obj)
 try {
     
-    let res = await axios.post('http://localhost:8080/member/signup',obj)
+    let res = await axios.post(url+'/member/signup',obj)
     console.log(res)
   //   console.log(res.data.msg)
   if(res.status==200 || res.status==201){
