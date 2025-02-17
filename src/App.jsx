@@ -5,7 +5,8 @@ import Home from './pages/Home'
 import Signup from './pages/Signup'
 import Login from './pages/Login'
 import UserContext from './context/UserContext'
-import ForgetAccount from './pages/forgetAccount'
+import ForgetAccount from './pages/ForgetAccount'
+
 
 const App = () => {
   const authCtx=useContext(UserContext)
