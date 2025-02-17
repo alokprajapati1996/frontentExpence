@@ -1,6 +1,6 @@
 import axios from 'axios'
-import React, { useRef, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import React, { useRef} from 'react'
+import {useNavigate } from 'react-router-dom'
 
 const ForgetAccount = () => {
     let emailRef=useRef()
