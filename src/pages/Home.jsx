@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import UserContext from '../context/UserContext'
-
+import url from '../url'
 const Home = () => {
 let expenceRef=useRef();
 let priceRef=useRef();
@@ -28,7 +28,7 @@ const handlesubmit=async(e)=>{
 
   
   try {
-    const res=await axios.post('http://localhost:8080/myExpence/create',obj)
+    const res=await axios.post(url+'/myExpence/create',obj)
   
     if (res.data.success) {
   
@@ -50,7 +50,7 @@ const handleUpdate=async(e)=>{
     price:priceRef.current.value
   }
   try {
-    const res=await axios.put(`http://localhost:8080/myExpence/updateExpence/${eId}`,obj)
+    const res=await axios.put(url+`/myExpence/updateExpence/${eId}`,obj)
 
     if (res.data.success) {
       console.log(res);
@@ -68,7 +68,9 @@ const handleUpdate=async(e)=>{
 //getAllExpencess_________________________________________________________________________________________
 async function getAllExpencess(){
   try {
-    const res=await axios.get('http://localhost:8080/myExpence/allExpence')
+    const res=await axios.get(url+'/myExpence/allExpence')
+   
+    // const res=await axios.get('http://localhost:8080/myExpence/allExpence')
     if(res.data.success){
     setAllExpence(res.data.expences)
 
@@ -89,7 +91,7 @@ useEffect(() => {
 const handleDelete=async(ele)=>{
 let id=ele._id;
 try {
-  const res=await axios.delete(`http://localhost:8080/myExpence/deleteExpence/${id}`)
+  const res=await axios.delete(url+`/myExpence/deleteExpence/${id}`)
   getAllExpencess()
 } catch (error) {
   console.log(error);

@@ -13,7 +13,7 @@ const Header = () => {
   }
   return (
     <>
-    <div className='bg-amber-300 w-full flex fixed h-10 justify-around p-2 '>
+    <div className='bg-amber-300 w-full flex  h-10 justify-around p-2 '>
         <h1 className=''>ExpenceTracker</h1>
             <ul className='flex gap-7 '>
                 <li><Link to={"/"}>Home</Link></li>

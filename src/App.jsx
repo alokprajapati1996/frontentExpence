@@ -6,6 +6,7 @@ import Signup from './pages/Signup'
 import Login from './pages/Login'
 import UserContext from './context/UserContext'
 import ForgetAccount from './pages/ForgetAccount'
+import MainPage from './pages/MainPage'
 
 
 const App = () => {
@@ -18,8 +19,10 @@ const App = () => {
     
     <BrowserRouter>
     <Header/>
+    
      <Routes>
-      <Route path='/' element={userLogin===true?<Home/> :<Navigate to={"/login"}/>}/>
+      <Route path='/' element={<MainPage/>}/>
+      <Route path='/home' element={userLogin===true?<Home/> :<Navigate to={"/login"}/>}/>
       <Route path='/sign-up' element={<Signup/>}/> 
       <Route path='/login' element={<Login/>}/> 
       <Route path='/forgetpass' element={<ForgetAccount/>}/>

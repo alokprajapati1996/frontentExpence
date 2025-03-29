@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useRef} from 'react'
 import {useNavigate } from 'react-router-dom'
+import url from '../url'
 
 const ForgetAccount = () => {
     let emailRef=useRef()
@@ -12,7 +13,7 @@ let navigate=useNavigate()
             email:emailRef.current?.value
         }
         try{
-        let res=await axios.post("http://localhost:8080/member/password-reset",obj)
+        let res=await axios.post(url+"/member/password-reset",obj)
         console.log(res)
         if(res.data.success){
             alert(res.data.msg)

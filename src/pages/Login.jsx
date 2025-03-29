@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useContext, useRef } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import UserContext from '../context/UserContext'
+import url from '../url'
 
 const Login = () => {
     const authCtx=useContext(UserContext)
@@ -22,14 +23,14 @@ const Login = () => {
       console.log(obj)
 try {
     
-    let res = await axios.post('http://localhost:8080/member/login',obj)
+    let res = await axios.post(url+'/member/login',obj)
     console.log(res)
     console.log(res.data.msg)
   if(res.status==200 || res.status==201){
 
     localStorage.setItem('auth',JSON.stringify({isLogin:true,user:res.data.user}))
     authCtx.setUserData({...authCtx.userData,isLogin:true})
-      navigate('/')
+      navigate('/home')
       alert(res.data.msg)
   }
 } catch (error) {
